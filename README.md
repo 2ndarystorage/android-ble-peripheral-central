@@ -1,24 +1,70 @@
-Android Bluetooth Low Energy communication Sample
-===================================
-Bla Bla
+# Android BLE Peripheral + Central Sample
 
-Getting Started
-------------
-Bla Bla
+A sample Android app demonstrating **Bluetooth Low Energy (BLE)** communication in both
+**central** and **peripheral** roles. The app can advertise as a peripheral, scan/connect
+as a central, and read/notify a sample characteristic. This is a practical template for
+**connect / send / receive / disconnect** flows using the standard Android BLE APIs.
 
-Screenshots
--------------
+## Features
+
+- **Peripheral mode** (BLE advertising)
+- **Central mode** (scan, connect, discover services)
+- **Read characteristic** and receive **notifications**
+- Basic UI for device discovery and connection state
+- Example service/characteristic using Heart Rate profile UUIDs
+
+## Screenshots
+
 <img src="screenshots/1.png" height="500" alt="Screenshot"/> <img src="screenshots/2.png" height="500" alt="Screenshot"/>
 <img src="screenshots/3.png" height="500" alt="Screenshot"/> <img src="screenshots/4.png" height="500" alt="Screenshot"/>
 
-Acknowledgements
-------------
-[android-BluetoothLeGatt][1]
+## Project Structure (key files)
 
-[android-BluetoothAdvertisements][2]
+- `MainActivity` – entry point + role selection
+- `CentralRoleActivity` – scanning / connection UI
+- `PeripheralRoleActivity` – advertising UI
+- `CentralService` – GATT client (connect/read/notify)
+- `PeripheralAdvertiseService` – BLE advertising as peripheral
+- `DeviceConnectActivity` – device connection + characteristic read
+- `Constants` – UUIDs and shared constants
 
-[ble-test-peripheral-android][3]
+## Setup
 
-[1]:https://github.com/googlesamples/android-BluetoothLeGatt/
-[2]:https://github.com/googlesamples/android-BluetoothAdvertisements/
-[3]:https://github.com/WebBluetoothCG/ble-test-peripheral-android
+**Requirements**
+- Android Studio
+- Android SDK 26 (compile/target)
+- **minSdkVersion 21** (BLE peripheral role requires Android 5.0+)
+- A BLE‑capable Android device
+
+**Build & Run**
+1. Clone this repository
+2. Open in Android Studio
+3. Build and run on a real device (BLE features may not work on emulators)
+
+## Usage
+
+1. Launch the app
+2. Choose **Central** or **Peripheral** role
+3. Peripheral: start advertising
+4. Central: scan, select device, connect
+5. Read/notify the sample characteristic
+
+> The sample uses Heart Rate profile UUIDs (see `Constants.java`).
+
+## Permissions
+
+Declared in `AndroidManifest.xml`:
+- `BLUETOOTH`
+- `BLUETOOTH_ADMIN`
+- `ACCESS_COARSE_LOCATION` (required for BLE scanning on older Android)
+
+## License
+
+This repository is a copy of the upstream sample. Check the original repository for
+license details and attribution.
+
+## Acknowledgements
+
+- https://github.com/googlesamples/android-BluetoothLeGatt
+- https://github.com/googlesamples/android-BluetoothAdvertisements
+- https://github.com/WebBluetoothCG/ble-test-peripheral-android
