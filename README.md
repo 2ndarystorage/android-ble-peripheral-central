@@ -79,7 +79,8 @@ license details and attribution.
 - Open the project in Android Studio and run on a real BLE‑capable device.
 - Optional CLI build: `./gradlew assembleDebug` (Not verified).
 - In-app: choose **Central** or **Peripheral**, then advertise or scan/connect and read/notify.
+- Not verified: build/run steps were not executed in this environment.
 
 ## Completion Status
 
-- **Usable (sample/template)**: core BLE flows are implemented and UI exists, but this is a demonstration app with minimal testing and older Android support libraries.
+- **Usable (sample/template)**: core BLE flows are implemented with a basic UI and Heart Rate sample UUIDs; this targets SDK 26 and uses Android support libraries (not AndroidX), indicating a demonstration sample rather than a production app.
