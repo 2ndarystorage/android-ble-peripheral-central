@@ -84,3 +84,19 @@ license details and attribution.
 ## Completion Status
 
 - **Usable (sample/template)**: core BLE flows are implemented with a basic UI and Heart Rate sample UUIDs; this targets SDK 26 and uses Android support libraries (not AndroidX), indicating a demonstration sample rather than a production app.
+
+## Program Summary
+
+- Android BLE sample app implementing both **peripheral** (advertising) and **central** (scan/connect/GATT) roles.
+- Uses Heart Rate service/characteristic UUIDs for the example read/notify flow (see `Constants.java`).
+
+## How to Use
+
+- Open the project in Android Studio and run on a real BLE-capable Android device.
+- Optional CLI build: `./gradlew assembleDebug` (Not verified).
+- In-app: pick **Central** or **Peripheral**, then advertise or scan/connect and read/notify.
+- Not verified: these steps were not executed in this environment.
+
+## Completion Status
+
+- **Usable (sample/template)**: core BLE flows and UI are present, but it targets SDK 26 with legacy support libraries and does not present production hardening (e.g., modern permissions, AndroidX migration).
