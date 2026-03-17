@@ -130,3 +130,19 @@ license details and attribution.
 ## Completion Status
 
 - **Usable (sample/template)**: key BLE flows and UI screens are present, but it targets SDK 26 with legacy support libraries and demo-grade handling.
+
+## Program Summary
+
+- Android BLE sample app that can act as both **peripheral** (advertise + GATT server) and **central** (scan/connect + GATT client).
+- Demonstrates read and notification flow using Heart Rate service/characteristic UUIDs (`Constants.java`).
+
+## How to Use
+
+- Open the project in Android Studio and run on a real BLE-capable Android device.
+- In-app: select **Central** or **Peripheral**, then advertise or scan/connect and read/notify.
+- Optional CLI build: `./gradlew assembleDebug` (Not verified).
+- Not verified: build/run steps were not executed in this environment.
+
+## Completion Status
+
+- **Usable (sample/template)**: core BLE flows and basic UI are implemented, but it targets SDK 26 with legacy support libraries and demo-grade handling rather than production hardening.
